@@ -1,41 +1,43 @@
-# Prerequisites
-*.d
-
-# Compiled Object files
-*.slo
-*.lo
+build/
+.build/
+.build_android/
+.build_mingw/
+.zig/
+.godot/
+.mingw/
+.vscode/
+program/test
+.sconsign.dblite
+.DS_Store
 *.o
-*.obj
+*.os
 
-# Precompiled Headers
-*.gch
-*.pch
+# ELF files - but allow example ELF files to be tracked
+*.elf
+!thirdparty/libriscv/examples/**/*.elf
 
-# Linker files
-*.ilk
+# Bin directory - be more specific about what to ignore
+bin/addons/godot_sandbox/bin/*.so
+bin/addons/godot_sandbox/bin/*.dll
+bin/addons/godot_sandbox/bin/*.dylib
+bin/cmake/toolchain.cmake
 
-# Debugger Files
-*.pdb
+# Ignore all CPP files in the bintr directory
+src/bintr/*.cpp
+src/gen/
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+# UID files - but allow test UID files to be tracked
+*.uid
+!thirdparty/Gut/test/**/*.uid
 
-# Fortran module files
-*.mod
-*.smod
+# Build files
+*.pyc
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+# Override main gitignore for files that should be tracked
+!bin/
+!bin/**
+!godot-sandbox.code-workspace
 
-# Executables
-*.exe
-*.out
-*.app
+bin/libsandbox.*
 
-# debug information files
-*.dwo
+thirdparty/godot-sandbox-demo/
